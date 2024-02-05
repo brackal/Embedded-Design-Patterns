@@ -1,12 +1,13 @@
 ///////////////////////////////////////////////////////////
 //  I_Counter.h
 //  Implementation of the Interface I_Counter
-//  Created on:      04-Feb-2024 17:49:01
+//  Created on:      05-Feb-2024 11:22:58
 //  Original author: aleksej.brack
 ///////////////////////////////////////////////////////////
 
-#if !defined(EA_3CA74383_438F_4d59_812A_9168C9F8E4F3__INCLUDED_)
-#define EA_3CA74383_438F_4d59_812A_9168C9F8E4F3__INCLUDED_
+#if !defined(EA_B5DC548E_1E06_4922_9773_37529554F457__INCLUDED_)
+#define EA_B5DC548E_1E06_4922_9773_37529554F457__INCLUDED_
+
 #include "ICB_Counter.h"
 
 class I_Counter
@@ -19,7 +20,8 @@ public:
 	virtual ~I_Counter(){
 
 	}
-	virtual void registerCallback(ICB_Counter* callback) =0;
+	virtual bool registerCallback(ICB_Counter* callback) =0;
+	virtual void unregisterCallback(ICB_Counter* callback) =0;
 
 };
-#endif // !defined(EA_3CA74383_438F_4d59_812A_9168C9F8E4F3__INCLUDED_)
+#endif // !defined(EA_B5DC548E_1E06_4922_9773_37529554F457__INCLUDED_)

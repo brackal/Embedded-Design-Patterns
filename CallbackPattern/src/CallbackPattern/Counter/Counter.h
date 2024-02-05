@@ -1,12 +1,14 @@
 ///////////////////////////////////////////////////////////
 //  Counter.h
 //  Implementation of the Class Counter
-//  Created on:      04-Feb-2024 17:49:01
+//  Created on:      05-Feb-2024 11:22:58
 //  Original author: aleksej.brack
 ///////////////////////////////////////////////////////////
 
-#if !defined(EA_204BB82A_6779_44cd_A4FE_46C62A6EFDAF__INCLUDED_)
-#define EA_204BB82A_6779_44cd_A4FE_46C62A6EFDAF__INCLUDED_
+#if !defined(EA_DB6A4B20_03B7_4436_B7D0_1E6618776B05__INCLUDED_)
+#define EA_DB6A4B20_03B7_4436_B7D0_1E6618776B05__INCLUDED_
+
+#include<array>
 
 #include "ICB_Counter.h"
 #include "I_Counter.h"
@@ -18,11 +20,13 @@ public:
 	Counter();
 	virtual ~Counter();
 	void incrementCounter();
-	void registerCallback(ICB_Counter* callback);
+	virtual bool registerCallback(ICB_Counter* callback) override;
+	virtual void unregisterCallback(ICB_Counter* callback) override;
 
 private:
 	int mCounter;
-	ICB_Counter* mCallback;
+	static const int mCallbackArraySize = 10;
+	std::array<ICB_Counter*, mCallbackArraySize> mCallbackArray;
 
 };
-#endif // !defined(EA_204BB82A_6779_44cd_A4FE_46C62A6EFDAF__INCLUDED_)
+#endif // !defined(EA_DB6A4B20_03B7_4436_B7D0_1E6618776B05__INCLUDED_)

@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////
 //  Controller.cpp
 //  Implementation of the Class Controller
-//  Created on:      04-Feb-2024 17:49:01
+//  Created on:      05-Feb-2024 11:22:58
 //  Original author: aleksej.brack
 ///////////////////////////////////////////////////////////
 
@@ -22,9 +22,19 @@ Controller::~Controller(){
 
 void Controller::notify(){
 
+	std::cout << "Controller: Incremented counter was notified!" << std::endl;
 }
 
 
 void Controller::setCounter(I_Counter* counter){
 
+	bool isRegistered = false;
+
+	mCounter = counter;
+	isRegistered = mCounter->registerCallback(this);
+
+	if (isRegistered == false) {
+		std::cout << "Not registered!" << std::endl;
+		//todo error handling
+	}
 }

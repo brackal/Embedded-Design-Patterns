@@ -1,12 +1,12 @@
 ///////////////////////////////////////////////////////////
 //  ICB_Counter.h
 //  Implementation of the Interface ICB_Counter
-//  Created on:      04-Feb-2024 17:49:01
+//  Created on:      05-Feb-2024 11:22:58
 //  Original author: aleksej.brack
 ///////////////////////////////////////////////////////////
 
-#if !defined(EA_7C858EB4_BD64_4f55_A5D2_B0302F13CA76__INCLUDED_)
-#define EA_7C858EB4_BD64_4f55_A5D2_B0302F13CA76__INCLUDED_
+#if !defined(EA_03BED477_C04E_488d_A39B_DF5389AEF8AA__INCLUDED_)
+#define EA_03BED477_C04E_488d_A39B_DF5389AEF8AA__INCLUDED_
 
 class ICB_Counter
 {
@@ -21,4 +21,4 @@ public:
 	virtual void notify() =0;
 
 };
-#endif // !defined(EA_7C858EB4_BD64_4f55_A5D2_B0302F13CA76__INCLUDED_)
+#endif // !defined(EA_03BED477_C04E_488d_A39B_DF5389AEF8AA__INCLUDED_)
