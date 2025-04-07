@@ -20,6 +20,19 @@ Client::~Client(){
 }
 
 
+/**
+ * @brief Executes the main loop of the Client, allowing user interaction to manipulate a counter.
+ * 
+ * This function sets up the controllers with a shared counter and enters an infinite loop
+ * to process user input. The following commands are supported:
+ * 
+ * - Press 'm' or 'M': Increments the counter.
+ * - Press 'n' or 'N': Unregisters the callback for mController from the counter.
+ * - Press 'f' or 'F': Registers the callback for mController to the counter.
+ * 
+ * The function continuously listens for user input and performs the corresponding action.
+ * It is designed to run indefinitely until terminated externally.
+ */
 void Client::run(){
 
 	mController.setCounter(&mCounter);

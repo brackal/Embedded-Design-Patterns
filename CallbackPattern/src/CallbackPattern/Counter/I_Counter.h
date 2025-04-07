@@ -10,6 +10,16 @@
 
 #include "ICB_Counter.h"
 
+/**
+ * @class I_Counter
+ * @brief Interface for a counter that supports callback registration and unregistration.
+ *
+ * This interface defines the basic structure for a counter that allows clients
+ * to register and unregister callback objects. It is intended to be implemented
+ * by concrete counter classes.
+ *
+ * @note The class is abstract and cannot be instantiated directly.
+ */
 class I_Counter
 {
 
