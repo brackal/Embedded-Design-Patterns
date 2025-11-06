@@ -92,7 +92,7 @@ A passive Model is purely a data model: it stores data and may perform basic com
 ![MVC - Passive Model](uml/MVC-Passive_Model.PNG "Passive Model")
 
 
-#### Passive Model
+#### Active Model
 An active Model is allowed to access lower-level system components directly.
 
 **Use Case: Sensor**<br>
