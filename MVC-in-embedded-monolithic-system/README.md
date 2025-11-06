@@ -47,7 +47,7 @@ They do not indicate a structural dependency. For example, a Button does not dep
 Arrows labeled with the stereotype << use >>, on the other hand, indicate a true structural dependency.<br>
 For instance, a Controller depends on the Model, which means that in the implementation, the Controller must hold a reference to the Model.
 
-![MVC - Roles in Embedded Context](uml/MVC - Roles in Embedded Context.PNG "MVC Roles in Embedded Context")
+![MVC - Roles in Embedded Context](uml/MVC-Roles_in_Embedded_Context.PNG "MVC Roles in Embedded Context")
 
 ## Layer View
 ![Layer](uml/Layer.PNG "Layer View")
