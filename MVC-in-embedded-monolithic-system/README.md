@@ -1,5 +1,5 @@
-# MVC pattern in embedded monolithic system (in progress!)
-## Main idea
+# MVC Pattern in Embedded Monolithic System (in progress!)
+## Main Idea
 How can the MVC pattern be implemented in a monolithic embedded system without a display? Which components can take the role of the Model, the View, and the Controller?
 
 The idea of applying the MVC (Model–View–Controller) pattern to embedded systems originated from the book "Making Embedded Systems" by Alicia White. There is limited information available on the use of MVC in embedded software. However, one relevant article is "Model View Controller Architecture on Embedded Systems" by Abhishek Bajpai. A general definition of MVC can also be found in "Pattern-Oriented Software Architecture" by Frank Buschmann.
@@ -27,9 +27,30 @@ The MVC pattern defines a separation of responsibilities among input handling, b
 ### Summary
 In summary, the MVC pattern enables a clear separation of concerns in software design. When applied to embedded systems, it helps isolate hardware-dependent input/output handling (Controller and View) from the core logic (Model), thereby improving modularity, maintainability, and testability.
 
-## Class view (in progress!)
+## Controller-Model–View Interaction in Embedded Context
+The Controller receives input from the user or from other systems.
+In this example, inputs are generated either by a button press or by a message (telegram) received via the serial interface. Each type of input is handled by a dedicated Controller.
 
-![Layer](uml/Layer.PNG "Layer")
+**Controllers** interpret incoming inputs and determine what data needs to be modified in the Model.
+They have both read and write access to the Model and trigger corresponding actions as required.
+In some use cases, Controllers also need to retrieve data from the Model; in such cases, they can directly access the necessary information.<br>
+Controllers also have access to the Views and can instruct them to visualize or present data when needed.
+
+The **Model** (which may consist of a single entity or, as in this example, multiple sub-models) notifies all subscribed Views whenever its data or internal state changes.
+
+Upon receiving such a notification, each **View** — which should have read-only access to the Model — retrieves the relevant data it is interested in and presents it accordingly.<br>
+In this example, the LED functions as a visual element. The transfer of information itself can be considered a form of data representation.
+
+##### Diagram Notation and Arrow Semantics
+In this diagram, arrows labeled with the stereotype << flow >> represent the information flow from the source to the sink.
+They do not indicate a structural dependency. For example, a Button does not depend on the Controller.
+Arrows labeled with the stereotype << use >>, on the other hand, indicate a true structural dependency.<br>
+For instance, a Controller depends on the Model, which means that in the implementation, the Controller must hold a reference to the Model.
+
+![MVC - Roles in Embedded Context](uml/MVC - Roles in Embedded Context.PNG "MVC Roles in Embedded Context")
+
+## Layer View
+![Layer](uml/Layer.PNG "Layer View")
 
 ## todo
 
