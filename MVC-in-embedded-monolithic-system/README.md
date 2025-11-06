@@ -97,7 +97,7 @@ An active Model is allowed to access lower-level system components directly.
 
 **Use Case: Sensor**<br>
 **•** The Sensor Controller determines when a measurement should be taken (e.g., every 60 seconds).<br>
-**•** The Sensor Controller invokes the appropriate action on the Sensor Model (e.g., SensorModel.DoMeasurement()).<br>
+**•** The Sensor Controller invokes the appropriate action on the Sensor Model (e.g., Model.SensorModel.DoMeasurement()).<br>
 **•** The Sensor Model itself initiates the measurement on the sensor and reads the measured values.<br>
 **•** After updating its data, the Model notifies subscribed observers, such as the Communication View, so that the values can be transmitted via the serial interface.
 
