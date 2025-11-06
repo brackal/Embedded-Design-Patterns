@@ -5,4 +5,4 @@ The callback pattern is a classic observer pattern. An implementation of the obs
 The callback pattern is used in embedded software to implement a asynchronous communication between software elements. For example if the button press needs to be communicated asynchronously to the application.
 
 ## [MVC pattern in embedded monolithic system](https://github.com/brackal/Embedded-Design-Patterns/tree/main/MVC-in-embedded-monolithic-system)
-In progress!
+How can the MVC pattern be implemented in a monolithic embedded system without a display? Which components can take the role of the Model, the View, and the Controller?
